@@ -26,6 +26,10 @@ func GetOrderByID(id int) (*models.Order, bool) {
 	}
 	return nil, false
 }
+//Lấy tất cả đơn hàng
+func GetAllOrders() []models.Order {
+	return orders
+}
 
 //Thanh toán đơn hàng
 func PayOrder(id int) (*models.Order, bool) {
