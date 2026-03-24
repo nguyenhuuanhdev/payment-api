@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
-//xanh
+//xanh...
 func main() {
 	r := gin.Default()
 
