@@ -1,5 +1,5 @@
 package models
-
+//1
 type Order struct {
 	ID     int     `json:"id"`
 	Amount float64 `json:"amount"`
