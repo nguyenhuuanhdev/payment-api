@@ -31,7 +31,13 @@ func GetAllOrders() []models.Order {
 	return orders
 }
 func GetOrdersByStatus(status string) []models.Order {
-	
+	var filteredOrders []models.Order
+	for _, order := range orders {
+		if order.Status == status {
+			filteredOrders = append(filteredOrders, order)
+		}
+	}
+	return filteredOrders
 }
 //Thanh toán đơn hàng
 func PayOrder(id int) (*models.Order, bool) {
