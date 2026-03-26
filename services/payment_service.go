@@ -30,7 +30,9 @@ func GetOrderByID(id int) (*models.Order, bool) {
 func GetAllOrders() []models.Order {
 	return orders
 }
-
+func GetOrdersByStatus(status string) []models.Order {
+	
+}
 //Thanh toán đơn hàng
 func PayOrder(id int) (*models.Order, bool) {
 	for i, order := range orders {
