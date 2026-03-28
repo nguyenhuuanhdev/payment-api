@@ -6,6 +6,14 @@ var orders []models.Order
 var currentID = 1
 
 //Tạo đơn hàng mới
+//Tạo đơn hàng mới với số tiền và trạng thái mặc định là "pending"
+func init() {
+	orders = []models.Order{
+		{ID: 1, Amount: 100.0, Status: "pending"},
+		{ID: 2, Amount: 200.0, Status: "paid"},
+	}
+	currentID = 3
+}
 func CreateOrder(amount float64) models.Order {
 	order := models.Order{
 		ID:     currentID,
@@ -17,7 +25,7 @@ func CreateOrder(amount float64) models.Order {
 	return order
 }
 
-//Lấy đơn hàng theo Id
+//Lấy đơn hàng theo Id 1  2 3
 func GetOrderByID(id int) (*models.Order, bool) {
 	for _, order := range orders {
 		if order.ID == id {
@@ -26,7 +34,9 @@ func GetOrderByID(id int) (*models.Order, bool) {
 	}
 	return nil, false
 }
+
 //Lấy tất cả đơn hàng
+
 func GetAllOrders() []models.Order {
 	return orders
 }
