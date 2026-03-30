@@ -8,17 +8,6 @@ var currentID = 1
 //Tạo đơn hàng mới
 //Tạo đơn hàng mới với số tiền và trạng thái mặc định là "pending"
 
-func CreateOrder(amount float64) models.Order {
-	order := models.Order{
-		ID:     currentID,
-		Amount: amount,
-		Status: "pending",
-	}
-	currentID++
-	orders = append(orders, order)
-	return order
-}
-
 //Lấy đơn hàng theo Id 1  2 3
 func GetOrderByID(id int) (*models.Order, bool) {
 	for _, order := range orders {
